@@ -1,0 +1,5 @@
+namespace: rcvl-wordpress-ns
+resources: [mariadb.yaml, wordpress.yaml]
+secretGenerator:
+  - name: db
+    literals: [password=changeme]
