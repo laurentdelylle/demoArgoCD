@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: deployment
-metadata: {name: mariadb}
+metadata:
+  name: mariadb
 spec:
   replicas: 1
   selector: {matchLabels: {app: mariadb}}
@@ -22,5 +23,7 @@ apiVersion: v1
 kind: service
 metadata: {name: mariadb}
 spec:
-  selector: {app: mariadb}
-  ports: [{port: 3306}]
+  selector:
+    app: mariadb
+  ports:
+    - port: 3306
