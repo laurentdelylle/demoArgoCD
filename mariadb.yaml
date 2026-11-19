@@ -14,9 +14,9 @@ spec:
           - {name: MARIADB_DATABASE, value: wp}
           - {name: MARIADB_USER, value: wp}
           - name: MARIADB_PASSWORD
-             valueFrom: {secretKeyRef: {name: db, key: password}}
+            valueFrom: {secretKeyRef: {name: db, key: password}}
           - name: MARIADB_ROOT_PASSWORD
-             valueFrom: {secretKeyRef: {name: db, key: password}}
+            valueFrom: {secretKeyRef: {name: db, key: password}}
 --- 
 apiVersion: v1
 kind: Service
