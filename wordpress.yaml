@@ -8,7 +8,7 @@ template:
   spec:
   containers:
   - name: wordpress
-    Image: wordpress:6-apache
+    image: wordpress:6-apache
     env:
           - {name: WORDPRESS_DB_HOST, value: mariadb}
           - {name: WORDPRESS_DB_NAME, value: wp}
