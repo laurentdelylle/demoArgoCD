@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: mariadb
-        image: mariadb: 11
+        image: mariadb:11
         env:
           - {name: MARIADB_DATABASE, value: wp}
           - {name: MARIADB_USER, value: wp}
