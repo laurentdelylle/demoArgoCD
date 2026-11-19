@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: deployment
+kind: Deployment
 metadata:
   name: mariadb
 spec:
@@ -20,7 +20,7 @@ spec:
             valueFrom: {secretKeyRef: {name: db, key: password}}
 --- 
 apiVersion: v1
-kind: service
+kind: Service
 metadata: {name: mariadb}
 spec:
   selector:
