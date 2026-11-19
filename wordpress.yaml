@@ -14,7 +14,7 @@ template:
           - {name: WORDPRESS_DB_NAME, value: wp}
           - {name: WORDPRESS_DB_USER, value: wp}
           - name: WORDPRESS_DB_PASSWORD
-             valueFrom: {secretKeyRef: {name: db, key: password}}
+            valueFrom: {secretKeyRef: {name: db, key: password}}
 ---
 apiVersion: v1
 kind: Service
