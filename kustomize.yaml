@@ -1,4 +1,4 @@
-namespace: rcvl-wordpress-ns
+namespace: wordpress
 resources: [mariadb.yaml, wordpress.yaml]
 secretGenerator:
   - name: db
