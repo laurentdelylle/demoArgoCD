@@ -4,24 +4,37 @@ metadata:
   name: mariadb
 spec:
   replicas: 1
-  selector: {matchLabels: {app: mariadb}}
+  selector:
+    matchLabels:
+      app: mariadb
   template:
-    metadata: {labels: {app: mariadb}}
+    metadata:
+      labels:
+        app: mariadb
     spec:
       containers:
       - name: mariadb
         image: mariadb:11
         env:
-          - {name: MARIADB_DATABASE, value: wp}
-          - {name: MARIADB_USER, value: wp}
+          - name: MARIADB_DATABASE
+            value: wp
+          - name: MARIADB_USER
+            value: wp
           - name: MARIADB_PASSWORD
-            valueFrom: {secretKeyRef: {name: db, key: password}}
+            valueFrom:
+              secretKeyRef:
+                name: db
+                key: password
           - name: MARIADB_ROOT_PASSWORD
-            valueFrom: {secretKeyRef: {name: db, key: password}}
+            valueFrom:
+              secretKeyRef:
+                name: db
+                key: password
 --- 
 apiVersion: v1
 kind: Service
-metadata: {name: mariadb}
+metadata:
+  name: mariadb
 spec:
   selector:
     app: mariadb
