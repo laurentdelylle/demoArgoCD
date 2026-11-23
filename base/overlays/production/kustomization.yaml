@@ -1,0 +1,15 @@
+namespace: demo-production
+resources:
+  - ../../base
+images:
+  - name: ghcr.io/stefanprodan/podinfo
+    newTag: 6.5.4
+replicas:
+  - name: demo-app
+    count: 2
+configMapGenerator:
+  - name: app-config
+    behavior: merge
+    literals:
+      - PODINFO_UI_MESSAGE=Environnement PRODUCTION
+      - PODINFO_UI_COLOR=#27ae60
