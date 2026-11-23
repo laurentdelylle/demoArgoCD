@@ -1,5 +1,5 @@
 resources:
-  - deployment.yaml
+  - podinfo.yaml
   - service.yaml
 configMapGenerator:
   - name: app-config
