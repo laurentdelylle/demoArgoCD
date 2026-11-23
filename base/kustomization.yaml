@@ -1,0 +1,8 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+configMapGenerator:
+  - name: app-config
+    literals:
+      - PODINFO_UI_MESSAGE=Valeur par défaut
+      - PODINFO_UI_COLOR=#888888
