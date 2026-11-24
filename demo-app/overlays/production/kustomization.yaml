@@ -13,3 +13,21 @@ configMapGenerator:
     literals:
       - PODINFO_UI_MESSAGE=Environnement PRODUCTION
       - PODINFO_UI_COLOR=#27ae60
+patches:
+  - target:
+      kind: Deployment
+      name: demo-app
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/ports/0/containerPort
+        value: 9898
+  - target:
+      kind: Service
+      name: demo-app
+    patch: |-
+      - op: replace
+        path: /spec/ports/0/port
+        value: 8083
+      - op: replace
+        path: /spec/ports/0/targetPort
+        value: 9898
