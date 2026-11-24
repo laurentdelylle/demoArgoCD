@@ -21,7 +21,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/template/spec/containers/0/ports/0/containerPort
-        value: 8082
+        value: 9898
   - target:
       kind: Service
       name: demo-app
@@ -29,3 +29,6 @@ patches:
       - op: replace
         path: /spec/ports/0/port
         value: 8082
+      - op: replace
+        path: /spec/ports/0/targetPort
+        value: 9898
