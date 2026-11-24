@@ -16,7 +16,8 @@ spec:
         - name: demo-app
           image: ghcr.io/stefanprodan/podinfo:6.7.1
           ports:
-            - containerPort: 9898
+            - name: http
+              containerPort: 9898
           envFrom:
             - configMapRef:
                 name: app-config
